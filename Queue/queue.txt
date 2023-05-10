@@ -1,0 +1,88 @@
+queue 
+insertion take place at the one end of the list called as rear
+deletion take place at the other end of the list called as front 
+queue is the (fifo) first in first out 
+create,enqueue,dequeue ,isempty,isfull
+
+/******************queue by array*********************/
+take 2 pointers front and rear
+queue is empty then front = rear = -1
+queue is full then front = 0 and rear = size - 1
+  
+create 
+struct queue {
+int array[size];
+int front ,rear;
+};
+algo create_queue(struct queue * q)
+q -> front= -1
+q -> rear= -1
+
+
+Enqueue 
+
+algo queue (struct queue *q ,int item)
+if(q->front or q->rear==-1)
+q->front=q->rear=0
+else if (q->rear=size-1)
+if(q->front ==0)
+print "queue overflow"
+exit
+temp=q->front
+
+set i=0
+while (temp<=q->rear)
+q->array[i]=q->array[temp]
+temp=temp+1
+i=i+1
+q->rear=q->rear=q->front+1
+q->front=0
+else 
+q->rear=q>rear+1
+q->array[q->rear]=item
+
+dequeue 
+
+algorithm dequeue (struct queue *Q)
+if (q->front ==-1 or q->rear==-1)
+display "queue is empty"
+exit;
+item=q->array[q->front]
+q->front=-1
+q->rear=-1
+else 
+q->front =q->front+1
+return item
+
+
+Algorithm EnCqueue( struct queue *CQ, int Item) –
+If (CQ->front == -1 or CQ->rear == -1)	//Check for emptiness
+ 	 CQ->front = CQ->rear = 0
+Else If ( CQ-> rear == SIZE-1)		//1st condition to check for fullness
+ 	If(CQ->front == 0)
+ 	               Print “Queue Overflow”
+                          Exit
+ 	CQ->rear = 0	// Start inserting from beginning
+Else If(CQ->rear = = (CQ->front – 1))      //2nd condition to Check fullness
+ 	 Print “Queue Overflow”
+            Exit 
+Else
+ 	CQ->rear = CQ->rear + 1
+CQ->array[CQ->rear] = Item
+
+
+Algorithm DeCqueue(struct queue *CQ) –
+If (CQ->front == -1 or CQ->rear == -1)	//Check for emptiness
+ 	 Display “Queue is empty”
+ 	 Exit
+Item  = CQ->array[CQ->front] 
+If ( CQ-> rear == CQ->front)		// Only one element
+ 	 CQ->front = -1 
+ 	 CQ->rear = -1
+ Else if (CQ->front == SIZE -1)             // if front points to last element 
+ 	 CQ->front = 0
+Else
+ 	CQ->front = CQ->front + 1
+Return Item
+
+

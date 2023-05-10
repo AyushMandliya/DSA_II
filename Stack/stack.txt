@@ -1,0 +1,85 @@
+stack - last in first out means LIFO or first in last out means filo data structure .
+last item is represent in the top of the stack
+
+push - add a new top item on top of the stack
+pop - remove the item from the top of the stack
+isempty - check to see if stack is empty
+isfull - check to see if the stack is full
+
+/*******************Array as a stack*******************/
+creation of the stack
+struct stack{
+	int array[size];
+	int top;
+	stk->top=-1;
+}
+
+
+Push operation 
+algorithm push(struct stack* stk,int item)
+if(stk->top==size-1)
+display"stack is full"
+return
+stack-> top = stack->top+1
+stk->array[stack->top]=item			o(1)
+
+
+pop operation 
+algorithm pop(struct stack* stk)
+if(STK->TOP== size-1)
+display "stack is empty"
+return
+item=stk->array[stk->top]
+stk->top=stk->top-1
+return item;					o(1)
+
+
+/*************Linked List as stack**************/
+
+struct node{
+int info;
+struct node* next;
+}
+
+push algorithm
+algorithm lpush (struct node* top,int item)
+struct node *newnode
+newnode = ALLOCATE memory
+if(newnode==null)
+display"unable to allocate memory"
+exit
+newnode ->info=info
+newnode->next=top
+top=newnode						o(1)
+
+pop algorithm
+algorithm lpop(struct node * top)
+struct node* temp
+temp=top
+if(top==null)
+display"stack is empty"
+return null
+item=temp->info
+top=temp->next
+free temp 
+return item						o(1)
+
+
+
+infix			 x+y		not understand by the computer
+prrefix		 +xy
+postfix		 xy+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
